@@ -1,16 +1,21 @@
 @import 'conf/reset.css';
 
+html,body {
+    height:100%;
+}
+
 .main {
     width: 100%;
+    height: 100%;
 }
 
 .devices {
     width: 100%;
-    height: 600px;
+    height: 80%;
 
     div {
         width: 50%;
-        height: 90%;
+        height: 100%;
         float: left;
 
         ul {
@@ -136,4 +141,8 @@ input[type=checkbox]:checked ~ #moreBoxRift {
     background-size: 100%;
     background-repeat:no-repeat;
     background-color: #1574d4;
+}
+
+@media only screen and (min-width : 768px) {
+
 }
