@@ -1,0 +1,139 @@
+@import 'conf/reset.css';
+
+.main {
+    width: 100%;
+}
+
+.devices {
+    width: 100%;
+    height: 600px;
+
+    div {
+        width: 50%;
+        height: 90%;
+        float: left;
+
+        ul {
+            width: 50%;
+            padding-top: 20%;
+        }
+        li {
+            color: black;
+            font-size:18px;
+            padding-top: 35%;
+            margin: 5px;
+        }
+        p {
+            padding-top: 30px;
+        }
+    }
+}
+
+#search {
+    width: 100%;
+    padding-top: 50px;
+    height: 120px;
+    margin-top: 50px;
+    margin: 0 auto;
+
+    .filters {
+        height: 80%;
+        padding-top: 20px;
+
+        div {
+            width: 170px;
+            margin-left: 10px;
+            float: left;
+            margin-top: 10px;
+        }
+
+  }
+
+}
+
+#textSearch {
+    text-align: center;
+}
+
+.list {
+    width: 100%;
+    height: 100%;
+
+    ul {
+        width: 100%;
+
+        li {
+            margin: 5px 0;
+            width: 100%;
+            height: 45px;
+            border: black solid 1px;
+            float: left;
+
+            a {
+                position: absolute;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                margin-left: 50px;
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}
+
+#moreBox {
+    width: 100%;
+    height: 200px;
+    display: none;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+label {
+    display: block;
+    padding: 5px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+input[type=checkbox]:checked ~ #moreBox {
+    display: block;
+}
+
+input[type=checkbox]:checked ~ #moreBoxRift {
+    display: block;
+}
+
+#moreBoxRift {
+    width: 100%;
+    height: 200px;
+    display: none;
+}
+
+.even {
+    background-color: gray;
+}
+
+.odd {
+    background-color: dimgray;
+}
+
+.vive {
+    background-image:url(../img/vive.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-color: #1b2838;
+}
+
+.oculus {
+    background-image:url(../img/rift.jpg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-color: #1574d4;
+}
