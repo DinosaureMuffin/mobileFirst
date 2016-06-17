@@ -19,45 +19,48 @@ html,body {
         float: left;
 
         ul {
-            width: 50%;
-            padding-top: 20%;
+            width: 100%;
         }
         li {
+            line-height: 150px;
             color: black;
             font-size:18px;
-            padding-top: 35%;
-            margin: 5px;
         }
         p {
-            padding-top: 30px;
+            position: relative;
+            margin-top: 5%;
+        }
+        label {
+            padding-top: 10px;
         }
     }
 }
 
 #search {
-    width: 100%;
-    padding-top: 50px;
+    position: relative;
+    padding-top: 30px;
     height: 120px;
-    margin-top: 50px;
+    width: 700px;
     margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
 
     .filters {
         height: 80%;
         padding-top: 20px;
 
         div {
-            width: 170px;
             margin-left: 10px;
             float: left;
             margin-top: 10px;
         }
+    }
 
-  }
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
-}
-
-#textSearch {
-    text-align: center;
 }
 
 .list {
@@ -86,11 +89,9 @@ html,body {
     }
 }
 
-#moreBox {
-    width: 100%;
-    height: 200px;
-    display: none;
-}
+
+
+
 
 input[type=checkbox] {
     position: absolute;
@@ -106,17 +107,13 @@ label {
 }
 
 input[type=checkbox]:checked ~ #moreBox {
-    display: block;
+    top: 0;
+    left: 0;
 }
 
 input[type=checkbox]:checked ~ #moreBoxRift {
-    display: block;
-}
-
-#moreBoxRift {
-    width: 100%;
-    height: 200px;
-    display: none;
+    top: 0;
+    left: 0;
 }
 
 .even {
@@ -141,6 +138,25 @@ input[type=checkbox]:checked ~ #moreBoxRift {
     background-size: 100%;
     background-repeat:no-repeat;
     background-color: #1574d4;
+}
+
+#moreBox {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: -9999px;
+    left: -9999px;
+    background-color: red;
+    transition:all 0.5s ease-out;
+}
+#moreBoxRift {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: -9999px;
+    right: -9999px;
+    background-color: yellow;
+    transition:all 0.5s ease-out;
 }
 
 @media only screen and (min-width : 768px) {
