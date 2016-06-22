@@ -1,5 +1,9 @@
 @import 'conf/reset.css';
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+@viveColor: #1b2838;
+@oculusColor: #1574d4;
+@images: "../img";
 
 html,body {
     height:100%;
@@ -42,14 +46,17 @@ html,body {
             font-size:24px
         }
         label {
-            width: 200px;
             position: relative;
+            width: 200px;
             font-size: 26px;
+            font-weight: bold;
+            display: block;
             z-index: 999;
             border-radius: 50px;
-            display: block;
             margin: 20px auto;
             text-align: center;
+            padding: 5px;
+
         }
     }
 }
@@ -119,27 +126,45 @@ html,body {
     }
 }
 
-input[type=checkbox] {
+.toHide {
     position: absolute;
     top: -9999px;
     left: -9999px;
 }
 
-label {
+input[type=checkbox] {
+   .toHide
+}
+
+/*label {
     display: block;
     padding: 5px;
     border-radius: 2px;
     font-weight: bold;
+}*/
+
+.boxToDisplay {
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.labelToFix {
+    position: fixed;
+    bottom: 50px;
 }
 
 input[type=checkbox]:checked ~ #moreBox {
-    top: 0;
-    left: 0;
+    .boxToDisplay;
 }
 
-input[type=checkbox]:checked ~ #moreBoxRift {
-    top: 0;
-    left: 0;
+.inputRift[type=checkbox]:checked ~ #moreBoxRift {
+    .boxToDisplay;
+}
+.inputRift[type=checkbox]:checked ~ .labelRift {
+    .labelToFix;
+}
+.inputRift[type=checkbox]:checked ~ .labelVive {
+    .toHide;
 }
 
 .even {
@@ -150,58 +175,48 @@ input[type=checkbox]:checked ~ #moreBoxRift {
     background-color: dimgray;
 }
 
-.vive {
-    background-image:url(../img/vive.png);
+.hmd {
     background-position: top;
     background-size: 100%;
     background-repeat:no-repeat;
-    background-color: #1b2838;
+}
+
+.vive {
+    background-image:url("@{images}/vive.png");
+    background-color: @viveColor;
+    .hmd;
 
     label {
         color: white;
-        background-color: #1574d4;
+        background-color: @oculusColor;
     }
 }
 
 .oculus {
-    background-image:url(../img/rift.jpg);
-    background-position: top;
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-color: #1574d4;
+    background-image:url("@{images}/rift.jpg");
+    background-color: @oculusColor;
+    .hmd;
+
     label {
         color: white;
-        background-color: #1b2838;
+        background-color: @viveColor;
     }
+}
+
+.moreBox {
+    .toHide;
+    width: 100%;
+    height: 100%;
+    transition:all 0.5s ease-out;
 }
 
 #moreBox {
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    top: -9999px;
-    left: -9999px;
+    .moreBox;
     background-color: red;
-    transition:all 0.5s ease-out;
 }
 #moreBoxRift {
-    position: absolute;
-    width: 100%;
-    top: -9999px;
-    right: -9999px;
+    .moreBox;
     background-color: yellow;
-    transition:all 0.5s ease-out;
-    z-index:1;
-}
-
-@media (max-width: 768px) {
-    .devices {
-        div {
-            li:first-of-type {
-                margin-top: 280px;
-            }
-        }
-    }
 }
 
 @media (min-width : 1024px) {
@@ -221,12 +236,15 @@ input[type=checkbox]:checked ~ #moreBoxRift {
                 line-height: 20px;
                 font-size:14px
             }
+            p:last-of-type {
+                margin-bottom: 10%;
+            }
             label {
                 position: relative;
                 font-size: 14px;
                 z-index: 999;
                 margin-left: 15px;
-                margin: 15px auto;
+                margin: auto;
             }
         }
     }
@@ -246,6 +264,5 @@ input[type=checkbox]:checked ~ #moreBoxRift {
     .list {
         margin-top: 30px;
     }
-
 
 }
