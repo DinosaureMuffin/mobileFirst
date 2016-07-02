@@ -61,10 +61,11 @@ html,body {
                 margin-left: 5px;
                 float: left;
                 border: 1px solid black;
+                border-radius: 5px;
                 text-align: center;
             }
             p:first-of-type {
-                margin-left: 0px;
+                margin-left: 0.5%;
             }
         }
         label {
@@ -143,6 +144,7 @@ html,body {
             height: 45px;
             border: black solid 1px;
             float: left;
+            border-radius: 5px;
 
             a {
                 position: absolute;
@@ -208,6 +210,7 @@ input[type=checkbox] {
     background-position: top;
     background-size: 100%;
     background-repeat:no-repeat;
+    border-radius: 15px;
 }
 
 .vive {
@@ -275,7 +278,12 @@ input[type=checkbox] {
 
     .oculus {
         img {
-            margin-bottom: 10px;
+        }
+    }
+
+    .info {
+        p:first-of-type {
+            margin-left: 5%;
         }
     }
 }
@@ -321,7 +329,6 @@ input[type=checkbox] {
     .oculus {
         background-position: center;
         img {
-            margin-bottom: 16px;
         }
     }
     .vive {
@@ -338,8 +345,10 @@ input[type=checkbox] {
     }
     .list {
         margin-top: 30px;
+
     }
     .info {
+        margin-left: 5%;
         font-size: 14px;
     }
 }
