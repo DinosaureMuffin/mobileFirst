@@ -7,6 +7,7 @@
 
 html,body {
     height:100%;
+    background-color: #e4e6e8;
 }
 
 .main {
@@ -45,7 +46,6 @@ html,body {
             margin-top: 15px;
             line-height: 15px;
             font-size:12px;
-            height: 30px;
         }
         .info {
             width: 100%;
@@ -55,10 +55,10 @@ html,body {
             p {
                 font-size: 9px;
                 padding: 4px 1px;
-                width: 30%;
+                width: 28%;
                 height: 20px;
                 margin: 0 auto;
-
+                margin-left: 5px;
                 float: left;
                 border: 1px solid black;
                 text-align: center;
@@ -69,13 +69,12 @@ html,body {
         }
         label {
             position: absolute;
-            width: 60px;
-            font-size: 8px;
+            width: 70px;
+            font-size: 9px;
             font-weight: bold;
             display: block;
             z-index: 999;
             border-radius: 50px;
-            margin: 20px auto;
             text-align: center;
             padding: 5px;
             float: left;
@@ -103,6 +102,12 @@ html,body {
             margin-left: 10px;
             float: left;
             margin-top: 10px;
+
+            input, select {
+                border: 1px solid;
+                border-color: #bdc7d8;
+                border-radius: 5px;
+            }
         }
     }
 
@@ -110,7 +115,7 @@ html,body {
         a {
             font-size: 22px;
             display: block;
-            background-color: darkblue;
+            background-color: grey;
             height: 50px;
             width: 220px;
             text-align: center;
@@ -119,7 +124,8 @@ html,body {
             color: black;
             vertical-align: middle;
             line-height: 50px;
-            box-sizing:border-box
+            box-sizing:border-box;
+            border-radius: 5px;
         }
     }
 }
@@ -150,8 +156,6 @@ html,body {
     }
 }
 
-
-
 .toHide {
     position: absolute;
     top: -9999px;
@@ -161,13 +165,6 @@ html,body {
 input[type=checkbox] {
    .toHide
 }
-
-/*label {
-    display: block;
-    padding: 5px;
-    border-radius: 2px;
-    font-weight: bold;
-}*/
 
 .boxToDisplay {
     top: 0;
@@ -243,11 +240,11 @@ input[type=checkbox] {
 
 #moreBox {
     .moreBox;
-    background-color: red;
+    background-color: @viveColor;
 }
 #moreBoxRift {
     .moreBox;
-    background-color: yellow;
+    background-color: @oculusColor;
 }
 
 @media screen and (min-width: 400px) {
@@ -286,6 +283,9 @@ input[type=checkbox] {
 @media screen and (min-width : 768px) {
 
     .devices {
+        img {
+            width: 90%;
+        }
 
         div {
             li:first-of-type {
@@ -298,7 +298,7 @@ input[type=checkbox] {
             p {
                 margin-top: 15px;
                 line-height: 20px;
-                font-size:14px
+                font-size: 14px
             }
             p:last-of-type {
                 margin-bottom: 10%;
@@ -339,5 +339,7 @@ input[type=checkbox] {
     .list {
         margin-top: 30px;
     }
-
+    .info {
+        font-size: 14px;
+    }
 }
